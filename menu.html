@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Menu - The Daily Grind</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        espresso: '#3e2723', // Deep Brown
+                        latte: '#d7ccc8',    // Warm Beige
+                        cream: '#fafafa',    // Soft White
+                        sage: '#556b2f',     // Sage Green
+                        gold: '#c5a059',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-nav {
+            background: rgba(62, 39, 35, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0; /* Start hidden */
+        }
+    </style>
+</head>
+<body class="bg-cream text-gray-800 font-sans antialiased">
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 text-white glass-nav">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" class="font-serif text-2xl font-bold tracking-wider flex items-center gap-2">
+                <i class="fa-solid fa-mug-hot"></i> The Daily Grind
+            </a>
+
+            <div class="hidden md:flex space-x-8 items-center font-medium">
+                <a href="index.html#home" class="hover:text-gold transition-colors">Home</a>
+                <a href="index.html#about" class="hover:text-gold transition-colors">About</a>
+                <a href="index.html#menu" class="hover:text-gold transition-colors">Menu</a>
+                <a href="index.html#gallery" class="hover:text-gold transition-colors">Gallery</a>
+                <a href="index.html#footer" class="bg-sage px-5 py-2 rounded-full hover:bg-white hover:text-sage transition-all duration-300">Contact</a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-espresso absolute w-full left-0 top-full shadow-lg border-t border-gray-700">
+            <div class="flex flex-col p-6 space-y-4 text-center">
+                <a href="index.html#home" class="mobile-link hover:text-gold">Home</a>
+                <a href="index.html#about" class="mobile-link hover:text-gold">About</a>
+                <a href="index.html#menu" class="mobile-link hover:text-gold">Menu</a>
+                <a href="index.html#gallery" class="mobile-link hover:text-gold">Gallery</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-20 bg-latte/30">
+        <section class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto bg-cream p-8 md:p-12 rounded-xl shadow-2xl">
+                <div class="text-center mb-12">
+                    <h1 class="font-serif text-5xl font-bold text-espresso">Our Full Menu</h1>
+                    <p class="text-gray-500 mt-2">Crafted with passion, served with a smile.</p>
+                </div>
+                
+                <div class="text-left space-y-12">
+                    <!-- Espresso Bar -->
+                    <div class="animate-fade-in-up" style="animation-delay: 100ms;">
+                        <h4 class="text-2xl font-bold text-sage mb-6 flex items-center gap-3 border-b pb-3"><i class="fa-solid fa-mug-hot"></i> Espresso Bar</h4>
+                        <div class="grid md:grid-cols-2 gap-x-12 gap-y-4">
+                            <div class="flex justify-between border-b border-dashed border-gray-300 py-2"><span>Espresso</span> <span class="font-bold text-espresso">$3.00</span></div>
+                            <div class="flex justify-between border-b border-dashed border-gray-300 py-2"><span>Americano</span> <span class="font-bold text-espresso">$3.50</span></div>
+                            <div class="flex justify-between border-b border-dashed border-gray-300 py-2"><span>Macchiato</span> <span class="font-bold text-espresso">$3.75</span></div>
+                            <div class="flex justify-between border-b border-dashed border-gray-300 py-2"><span>Cortado</span> <span class="font-bold text-espresso">$4.00</span></div>
+                            <div class="flex justify-between border-b border-dashed border-gray-300 py-2"><span>Cappuccino</span> <span class="font-bold text-espresso">$4.50</span></div>
+                            <div class="flex justify-between border-b border-dashed border-gray-300 py-2"><span>Latte</span> <span class="font-bold text-espresso">$5.00</span></div>
+                            <div class="flex justify-between border-b border-dashed border-gray-300 py-2"><span>Flat White</span> <span class="font-bold text-espresso">$4.50</span></div>
+                            <div class="flex justify-between border-b border-dashed border-gray-300 py-2"><span>Mocha</span> <span class="font-bold text-espresso">$5.50</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Brew Bar & Tea -->
+                    <div class="animate-fade-in-up" style="animation-delay: 300ms;">
+                        <h4 class="text-2xl font-bold text-sage mb-6 flex items-center gap-3 border-b pb-3"><i class="fa-solid fa-leaf"></i> Brew & Tea</h4>
+                        <div class="grid md:grid-cols-2 gap-x-12 gap-y-4">
+                            <div class="flex justify-between border-b border-dashed border-gray-300 py-2"><span>Pour Over</span> <span class="font-bold text-espresso">$5.00</span></div>
+                            <div class="flex justify-between border-b border-dashed border-gray-300 py-2"><span>Cold Brew</span> <span class="font-bold text-espresso">$4.50</span></div>
+                            <div class="flex justify-between border-b border-dashed border-gray-300 py-2"><span>Matcha Latte</span> <span class="font-bold text-espresso">$5.50</span></div>
+                            <div class="flex justify-between border-b border-dashed border-gray-300 py-2"><span>Chai Latte</span> <span class="font-bold text-espresso">$5.00</span></div>
+                            <div class="flex justify-between border-b border-dashed border-gray-300 py-2"><span>Loose Leaf Tea</span> <span class="font-bold text-espresso">$3.50</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Pastries -->
+                    <div class="animate-fade-in-up" style="animation-delay: 500ms;">
+                        <h4 class="text-2xl font-bold text-sage mb-6 flex items-center gap-3 border-b pb-3"><i class="fa-solid fa-bread-slice"></i> Pastries</h4>
+                        <div class="grid md:grid-cols-2 gap-x-12 gap-y-4">
+                            <div class="flex justify-between border-b border-dashed border-gray-300 py-2"><span>Butter Croissant</span> <span class="font-bold text-espresso">$3.50</span></div>
+                            <div class="flex justify-between border-b border-dashed border-gray-300 py-2"><span>Almond Croissant</span> <span class="font-bold text-espresso">$4.25</span></div>
+                            <div class="flex justify-between border-b border-dashed border-gray-300 py-2"><span>Pain au Chocolat</span> <span class="font-bold text-espresso">$4.25</span></div>
+                            <div class="flex justify-between border-b border-dashed border-gray-300 py-2"><span>Blueberry Muffin</span> <span class="font-bold text-espresso">$3.75</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="bg-espresso text-latte py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div>
+                    <h3 class="font-serif text-2xl font-bold text-white mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-mug-hot"></i> The Daily Grind
+                    </h3>
+                    <p class="text-stone-400 mb-6">
+                        Serving the best artisanal coffee in the city. Come for the coffee, stay for the warmth.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center hover:bg-sage hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center hover:bg-sage hover:text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center hover:bg-sage hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider mb-6">Opening Hours</h4>
+                    <ul class="space-y-3 text-stone-400">
+                        <li class="flex justify-between"><span>Mon - Fri</span> <span>7:00 AM - 8:00 PM</span></li>
+                        <li class="flex justify-between"><span>Saturday</span> <span>8:00 AM - 9:00 PM</span></li>
+                        <li class="flex justify-between"><span>Sunday</span> <span>8:00 AM - 6:00 PM</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider mb-6">Contact Us</h4>
+                    <ul class="space-y-4 text-stone-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-sage"></i>
+                            <span>123 Artisan Avenue, Coffee District,<br>Cityville, ST 90210</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-sage"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-sage"></i>
+                            <span>hello@dailygrind.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-stone-800 mt-12 pt-8 text-center text-stone-500 text-sm">
+                &copy; 2023 The Daily Grind. All Rights Reserved. Designed by Gemini.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -43,6 +43,17 @@
         .text-shadow {
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
     </style>
 </head>
 <body class="bg-cream text-gray-800 font-sans antialiased">
@@ -54,11 +65,11 @@
             </a>
 
             <div class="hidden md:flex space-x-8 items-center font-medium">
-                <a href="#home" class="hover:text-gold transition-colors">Home</a>
-                <a href="#about" class="hover:text-gold transition-colors">About</a>
-                <a href="#menu" class="hover:text-gold transition-colors">Menu</a>
-                <a href="#gallery" class="hover:text-gold transition-colors">Gallery</a>
-                <a href="#footer" class="bg-sage px-5 py-2 rounded-full hover:bg-white hover:text-sage transition-all duration-300">Contact</a>
+                <a href="index.html#home" class="hover:text-gold transition-colors">Home</a>
+                <a href="index.html#about" class="hover:text-gold transition-colors">About</a>
+                <a href="index.html#menu" class="hover:text-gold transition-colors">Menu</a>
+                <a href="index.html#gallery" class="hover:text-gold transition-colors">Gallery</a>
+                <a href="index.html#footer" class="bg-sage px-5 py-2 rounded-full hover:bg-white hover:text-sage transition-all duration-300">Contact</a>
             </div>
 
             <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none">
@@ -68,10 +79,10 @@
 
         <div id="mobile-menu" class="hidden md:hidden bg-espresso absolute w-full left-0 top-full shadow-lg border-t border-gray-700">
             <div class="flex flex-col p-6 space-y-4 text-center">
-                <a href="#home" class="mobile-link hover:text-gold">Home</a>
-                <a href="#about" class="mobile-link hover:text-gold">About</a>
-                <a href="#menu" class="mobile-link hover:text-gold">Menu</a>
-                <a href="#gallery" class="mobile-link hover:text-gold">Gallery</a>
+                <a href="index.html#home" class="mobile-link hover:text-gold">Home</a>
+                <a href="index.html#about" class="mobile-link hover:text-gold">About</a>
+                <a href="index.html#menu" class="mobile-link hover:text-gold">Menu</a>
+                <a href="index.html#gallery" class="mobile-link hover:text-gold">Gallery</a>
             </div>
         </div>
     </nav>
@@ -174,7 +185,6 @@
 
                 <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
                     <div class="h-64 overflow-hidden relative">
-                        <!-- <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Matcha Latte" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"> -->
                         <img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Matcha Latte" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         <span class="absolute top-4 right-4 bg-sage text-white text-sm font-bold px-3 py-1 rounded-full">$5.00</span>
                     </div>
@@ -186,7 +196,7 @@
             </div>
             
             <div class="text-center mt-12">
-                <a href="#" class="inline-block border-2 border-espresso text-espresso px-8 py-3 rounded-full font-medium hover:bg-espresso hover:text-white transition-all duration-300">
+                <a href="menu.html" class="inline-block border-2 border-espresso text-espresso px-8 py-3 rounded-full font-medium hover:bg-espresso hover:text-white transition-all duration-300">
                     View Full Menu
                 </a>
             </div>
