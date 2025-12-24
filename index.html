@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Grind | Artisan Coffee</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        espresso: '#3e2723', // Deep Brown
+                        latte: '#d7ccc8',    // Warm Beige
+                        cream: '#fafafa',    // Soft White
+                        sage: '#556b2f',     // Sage Green
+                        gold: '#c5a059',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Utilities for nuances */
+        .glass-nav {
+            background: rgba(62, 39, 35, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body class="bg-cream text-gray-800 font-sans antialiased">
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 text-white">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="font-serif text-2xl font-bold tracking-wider flex items-center gap-2">
+                <i class="fa-solid fa-mug-hot"></i> The Daily Grind
+            </a>
+
+            <div class="hidden md:flex space-x-8 items-center font-medium">
+                <a href="#home" class="hover:text-gold transition-colors">Home</a>
+                <a href="#about" class="hover:text-gold transition-colors">About</a>
+                <a href="#menu" class="hover:text-gold transition-colors">Menu</a>
+                <a href="#gallery" class="hover:text-gold transition-colors">Gallery</a>
+                <a href="#footer" class="bg-sage px-5 py-2 rounded-full hover:bg-white hover:text-sage transition-all duration-300">Contact</a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-espresso absolute w-full left-0 top-full shadow-lg border-t border-gray-700">
+            <div class="flex flex-col p-6 space-y-4 text-center">
+                <a href="#home" class="mobile-link hover:text-gold">Home</a>
+                <a href="#about" class="mobile-link hover:text-gold">About</a>
+                <a href="#menu" class="mobile-link hover:text-gold">Menu</a>
+                <a href="#gallery" class="mobile-link hover:text-gold">Gallery</a>
+            </div>
+        </div>
+    </nav>
+
+    <header id="home" class="relative h-screen flex items-center justify-center bg-fixed bg-center bg-cover" 
+            style="background-image: url('https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="absolute inset-0 bg-black/50"></div>
+        
+        <div class="relative z-10 text-center text-white px-4 animate-fade-in-up">
+            <span class="text-gold uppercase tracking-[0.3em] text-sm font-semibold mb-4 block">Est. 2023</span>
+            <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 text-shadow leading-tight">
+                Brewed to <br/><span class="italic text-gold">Perfection</span>
+            </h1>
+            <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light text-gray-200">
+                Experience the warmth of artisanal coffee in a cozy atmosphere. 
+                Every cup tells a story of passion and craftsmanship.
+            </p>
+            <a href="#menu" class="inline-block bg-sage text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-white hover:text-sage transition-all duration-300 transform hover:scale-105 shadow-lg">
+                Order Now
+            </a>
+        </div>
+    </header>
+
+    <section id="about" class="py-20 md:py-28 bg-white overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+                <div class="w-full md:w-1/2 relative">
+                    <div class="relative z-10 rounded-lg overflow-hidden shadow-2xl transform md:rotate-2 hover:rotate-0 transition-transform duration-500">
+                        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Barista working" class="w-full object-cover h-[500px]">
+                    </div>
+                    <div class="absolute -bottom-6 -left-6 w-full h-full border-4 border-sage rounded-lg -z-0 hidden md:block"></div>
+                </div>
+
+                <div class="w-full md:w-1/2">
+                    <h4 class="text-sage font-bold uppercase tracking-widest mb-2">Our Story</h4>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-espresso mb-6">Passionate About Every Bean</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        At The Daily Grind, we believe coffee is more than just a caffeine kick—it's a ritual. We source our beans ethically from the world's finest growers, roasting them in small batches to preserve their unique aromatic profiles.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Whether you need a quiet corner to work or a vibrant space to catch up with friends, our doors are always open, and the espresso machine is always steaming.
+                    </p>
+                    
+                    <div class="flex items-center gap-8">
+                        <div class="text-center">
+                            <h3 class="font-serif text-3xl font-bold text-espresso">100%</h3>
+                            <p class="text-sm text-gray-500">Organic Beans</p>
+                        </div>
+                        <div class="w-px h-12 bg-gray-300"></div>
+                        <div class="text-center">
+                            <h3 class="font-serif text-3xl font-bold text-espresso">25+</h3>
+                            <p class="text-sm text-gray-500">Varieties</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="menu" class="py-20 bg-latte/30">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-sage font-bold uppercase tracking-widest">Our Favorites</span>
+                <h2 class="font-serif text-4xl font-bold text-espresso mt-2">Signature Blends</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Caramel Macchiato" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-sage text-white text-sm font-bold px-3 py-1 rounded-full">$5.50</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-espresso mb-2">Caramel Macchiato</h3>
+                        <p class="text-gray-500 text-sm">Freshly steamed milk with vanilla-flavored syrup marked with espresso and topped with a caramel drizzle.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1625126626646-5f2af0894a77?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cold Brew" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-sage text-white text-sm font-bold px-3 py-1 rounded-full">$4.75</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-espresso mb-2">Nitro Cold Brew</h3>
+                        <p class="text-gray-500 text-sm">Slow-steeped for 20 hours, infused with nitrogen for a creamy texture and velvety smooth finish.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+                    <div class="h-64 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Latte Art" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-sage text-white text-sm font-bold px-3 py-1 rounded-full">$4.50</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-espresso mb-2">Hazelnut Latte</h3>
+                        <p class="text-gray-500 text-sm">Rich espresso and steamed milk combined with roasted hazelnut essence, topped with foam.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+                    <div class="h-64 overflow-hidden relative">
+                        <!-- <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Matcha Latte" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"> -->
+                        <img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Matcha Latte" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <span class="absolute top-4 right-4 bg-sage text-white text-sm font-bold px-3 py-1 rounded-full">$5.00</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-xl font-bold text-espresso mb-2">Matcha Green Tea</h3>
+                        <p class="text-gray-500 text-sm">Premium grade matcha tea powder whisked with steamed milk and slightly sweetened.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block border-2 border-espresso text-espresso px-8 py-3 rounded-full font-medium hover:bg-espresso hover:text-white transition-all duration-300">
+                    View Full Menu
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-4xl font-bold text-espresso">The Vibe</h2>
+                <p class="text-gray-500 mt-2">Follow us @TheDailyGrind</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[200px]">
+                <div class="col-span-2 row-span-2 rounded-xl overflow-hidden relative group">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Coffee Shop Interior">
+                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <i class="fa-brands fa-instagram text-white text-3xl"></i>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden relative group">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Coffee beans">
+                </div>
+                <div class="rounded-xl overflow-hidden relative group">
+                    <!-- <img src="https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Pastries"> -->
+                    <img src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Pastries">
+                </div>
+                <div class="rounded-xl overflow-hidden relative group">
+                    <img src="https://images.unsplash.com/photo-1653762380059-051b0a6e6028?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="People talking">
+                </div>
+                <div class="col-span-2 row-span-2 rounded-xl overflow-hidden relative group">
+                    <img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="Latte Top View">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer" class="bg-espresso text-latte py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div>
+                    <h3 class="font-serif text-2xl font-bold text-white mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-mug-hot"></i> The Daily Grind
+                    </h3>
+                    <p class="text-stone-400 mb-6">
+                        Serving the best artisanal coffee in the city. Come for the coffee, stay for the warmth.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center hover:bg-sage hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center hover:bg-sage hover:text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center hover:bg-sage hover:text-white transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider mb-6">Opening Hours</h4>
+                    <ul class="space-y-3 text-stone-400">
+                        <li class="flex justify-between"><span>Mon - Fri</span> <span>7:00 AM - 8:00 PM</span></li>
+                        <li class="flex justify-between"><span>Saturday</span> <span>8:00 AM - 9:00 PM</span></li>
+                        <li class="flex justify-between"><span>Sunday</span> <span>8:00 AM - 6:00 PM</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider mb-6">Contact Us</h4>
+                    <ul class="space-y-4 text-stone-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-sage"></i>
+                            <span>123 Artisan Avenue, Coffee District,<br>Cityville, ST 90210</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-sage"></i>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-sage"></i>
+                            <span>hello@dailygrind.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-stone-800 mt-12 pt-8 text-center text-stone-500 text-sm">
+                &copy; 2023 The Daily Grind. All Rights Reserved. Designed by Gemini.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-nav', 'py-2');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.remove('glass-nav', 'py-2');
+                navbar.classList.add('py-4');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
